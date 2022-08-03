@@ -76,25 +76,60 @@ const Blog = () => {
 
             <Link to={'/blog/new'}>Add new post</Link>
             {
-                postsOnPage.filter(
-                    post => post.title.includes(postQuery) && post.id >= startsFrom
-                ).map(post => (
-                    <Link
-                        to={`/blog/${post.id}`}
-                        key={post.id}
-                        className={styles.blogsLinks}
-                    >
-                        <h3>{post.title}</h3>
-                    </Link>
-                ))
+
+                searchParams.has('post') ?
+                    (
+
+
+                        posts.filter(
+                            post => post.title.includes(postQuery) && post.id >= startsFrom
+                        ).map(post => (
+                            <Link
+                                to={`/blog/${post.id}`}
+                                key={post.id}
+                                className={styles.blogsLinks}
+                            >
+                                <h3>{post.title}</h3>
+                            </Link>
+                        ))
+                    ) : (
+                        postsOnPage.filter(
+                            post => post.title.includes(postQuery) && post.id >= startsFrom
+                        ).map(post => (
+                            <Link
+                                to={`/blog/${post.id}`}
+                                key={post.id}
+                                className={styles.blogsLinks}
+                            >
+                                <h3>{post.title}</h3>
+                            </Link>
+                        ))
+                    )
+            }
+            {
+                searchParams.has('post') ?
+                    (
+
+                        ''
+                    ) : (
+                        <div>
+                            <button onClick={prevPage} disabled={page <= 1}>
+                                prev
+                            </button>
+                            <button onClick={nextPage} disabled={page >= pages}>
+                                next
+                            </button>
+                        </div>
+                    )
+
             }
 
-            <button onClick={prevPage} disabled={page <= 1}>
-                prev
-            </button>
-            <button onClick={nextPage} disabled={page >= pages}>
-                next
-            </button>
+            {/*<button onClick={prevPage} disabled={page <= 1}>*/}
+            {/*    prev*/}
+            {/*</button>*/}
+            {/*<button onClick={nextPage} disabled={page >= pages}>*/}
+            {/*    next*/}
+            {/*</button>*/}
         </div>
     )
 }

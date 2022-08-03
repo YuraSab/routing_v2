@@ -24,7 +24,6 @@ const BlogFilter = ({postQuery, latest, setSearchParams, }) => {
 
 
 
-
   return (
     <div>
       <form onSubmit={handleSubmit} autoComplete={'off'}>
