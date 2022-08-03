@@ -11,8 +11,8 @@ header {
 }
 
 main {
-    /*flex: 1;*/
-    height: 800px;
+    flex: 1;
+    /*height: 800px;*/
     padding: 50px;
 }
 

@@ -1,0 +1,11 @@
+.blogsLinks{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-style: italic;
+}
+
+
+.singlePage{
+    min-height: 560px;
+}

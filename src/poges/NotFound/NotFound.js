@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Blog = () => {
-
+const NotFound = () => {
+ 
   return (
     <div>
-        <h1>Blog</h1>
+        
     </div>
   )
 }
 
-export { Blog }
+export { NotFound }
