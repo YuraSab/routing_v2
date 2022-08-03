@@ -3,7 +3,7 @@ import React from 'react';
 const BlogNew = () => {
 
     return (
-        <div style={{minHeight: 560}}>
+        <div style={{minHeight: 599}}>
             BlogNew
         </div>
     )

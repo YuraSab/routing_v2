@@ -3,8 +3,8 @@ import React from 'react';
 const NotFound = () => {
  
   return (
-    <div>
-        
+    <div style={{minHeight: 599}}>
+        Not found
     </div>
   )
 }

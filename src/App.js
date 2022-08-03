@@ -9,6 +9,7 @@ import {BlogSinglePage} from "./poges/Blog/BlogSinglePage";
 import {BlogEdit} from "./poges/Blog/BlogEdit";
 import {BlogNew} from "./poges/Blog/BlogNew";
 import {NotFound} from "./poges/NotFound/NotFound";
+import {Navigate} from "react-router";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                 <Route path={'*'} element={<NotFound/>}/>
                 <Route path={'/about'} element={<About/>}/>
                 <Route path={'/blog'} element={<Blog/>}/>
+                <Route path={'/blog-us'} element={<Navigate to={'/blog'}/>}/>
                 <Route path={'/blog/:id'} element={<BlogSinglePage/>}/>
                 <Route path={'/blog/:id/edit'} element={<BlogEdit/>}/>
                 <Route path={'/blog/new'} element={<BlogNew/>}/>

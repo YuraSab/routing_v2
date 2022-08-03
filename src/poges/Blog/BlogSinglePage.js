@@ -1,12 +1,14 @@
 import React from 'react';
 import {useEffect, useState} from "react";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import styles from "./Blog.module.css";
 
 const BlogSinglePage = () => {
 
 
     const {id} = useParams();
+    const navigate = useNavigate();
+
 
     const [post, setPost] = useState(null);
 
@@ -16,8 +18,14 @@ const BlogSinglePage = () => {
             .then(value => setPost(value))
     }, [id])
 
+
+    const back = '<<Back';
+
     return (
-        <div className={styles.singlePage}>
+        <div style={{minHeight: 599}}>
+
+
+            <div className={styles.buttonBack} onClick={() => navigate(-1)}>{back}</div>
             <h1>BlogSinglePage</h1>
             {
                 post && (

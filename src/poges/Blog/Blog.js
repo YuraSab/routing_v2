@@ -45,7 +45,7 @@ const Blog = () => {
     return (
 
 
-        <div style={{minHeight: 560}}>
+        <div style={{minHeight: 599}}>
             <h1>Blogs:</h1>
             {
                 postsOnPage.map(post => (
