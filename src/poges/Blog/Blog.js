@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useSearchParams} from "react-router-dom";
 import styles from "./Blog.module.css";
+import {BlogFilter} from "../../components/BlogFilter/BlogFilter";
 
 const Blog = () => {
 
@@ -39,19 +40,19 @@ const Blog = () => {
     }
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const query = form.search.value;
-        // setSearchParams({post: query});
-        const isLatest = form.latest.checked;
-        const params = {};
-
-        if(query.length) params.post = query;
-        if(isLatest) params.latest = true;
-
-        setSearchParams(params)
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const form = e.target;
+    //     const query = form.search.value;
+    //     // setSearchParams({post: query});
+    //     const isLatest = form.latest.checked;
+    //     const params = {};
+    //
+    //     if(query.length) params.post = query;
+    //     if(isLatest) params.latest = true;
+    //
+    //     setSearchParams(params)
+    // }
 
 
     // const pages = Math.max(posts.length/20);
@@ -62,13 +63,16 @@ const Blog = () => {
         <div style={{minHeight: 599}}>
             <h1>Blogs:</h1>
 
-            <form onSubmit={handleSubmit} autoComplete={'off'}>
-                <input type={'search'} name={'search'}/>
-                <label style={{padding: '0 1rem'}}> New only
-                    <input type={'checkbox'} name={'latest'}/>
-                </label>
-                <input type={'submit'} value={'Search'}/>
-            </form>
+
+            <BlogFilter postQuery={postQuery} latest={latest} setSearchParams={setSearchParams}/>
+
+            {/*<form onSubmit={handleSubmit} autoComplete={'off'}>*/}
+            {/*    <input type={'search'} name={'search'}/>*/}
+            {/*    <label style={{padding: '0 1rem'}}> New only*/}
+            {/*        <input type={'checkbox'} name={'latest'}/>*/}
+            {/*    </label>*/}
+            {/*    <input type={'submit'} value={'Search'}/>*/}
+            {/*</form>*/}
 
             <Link to={'/blog/new'}>Add new post</Link>
             {
