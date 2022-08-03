@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Outlet} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 import styles from "./Layout.module.css";
 
 const Layout = () => {
@@ -8,21 +8,21 @@ const Layout = () => {
     <div>
         <div className={styles.mainDiv}>
             <header>
-                <Link className={styles.link} to={'/'}>
+                <NavLink className={({isActive}) => isActive ? styles.activeLink : styles.link} to={'/'}>
                     <div className={styles.linkDiv}>
                         Home
                     </div>
-                </Link>
-                <Link className={styles.link} to={'/about'}>
+                </NavLink>
+                <NavLink className={({isActive}) => isActive ? styles.activeLink : styles.link} to={'/about'}>
                     <div className={styles.linkDiv}>
                         About
                     </div>
-                </Link>
-                <Link className={styles.link} to={'/blog'}>
+                </NavLink>
+                <NavLink className={({isActive}) => isActive ? styles.activeLink : styles.link} to={'/blog'}>
                     <div className={styles.linkDiv}>
                         Blog
                     </div>
-                </Link>
+                </NavLink>
             </header>
             <main>
                 <Outlet/>
