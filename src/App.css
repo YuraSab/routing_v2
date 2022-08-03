@@ -1,49 +1,10 @@
-.mainDiv {
-}
-
-header {
-    display: flex;
-    height: 100px;
-    background: darkgreen;
-    justify-content: start;
-    align-items: center;
-    padding-left: 75px;
-
-}
 
 
-main {
-    /*flex: 1;*/
-    height: 800px;
-    padding: 50px;
-}
 
 
-footer {
-    height: 150px;
-    background: darkgreen;
-}
 
 
-.link {
-    color: antiquewhite;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: bolder;
-}
 
-
-.linkDiv {
-    height: 100px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.linkDiv:hover {
-    background: forestgreen;
-}
 
 
 .App {
