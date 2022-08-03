@@ -1,28 +1,30 @@
 import React from 'react';
-import {NavLink, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import styles from "./Layout.module.css";
+import {CustomLink} from "../CustomLink/CustomLink";
 
 const Layout = () => {
+
 
   return (
     <div>
         <div className={styles.mainDiv}>
             <header>
-                <NavLink className={({isActive}) => isActive ? styles.activeLink : styles.link} to={'/'}>
+                <CustomLink to={'/'}>
                     <div className={styles.linkDiv}>
                         Home
                     </div>
-                </NavLink>
-                <NavLink className={({isActive}) => isActive ? styles.activeLink : styles.link} to={'/about'}>
+                </CustomLink>
+                <CustomLink to={'/about'}>
                     <div className={styles.linkDiv}>
                         About
                     </div>
-                </NavLink>
-                <NavLink className={({isActive}) => isActive ? styles.activeLink : styles.link} to={'/blog'}>
+                </CustomLink>
+                <CustomLink to={'/blog'}>
                     <div className={styles.linkDiv}>
                         Blog
                     </div>
-                </NavLink>
+                </CustomLink>
             </header>
             <main>
                 <Outlet/>
