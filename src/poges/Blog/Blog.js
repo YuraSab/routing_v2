@@ -47,6 +47,7 @@ const Blog = () => {
 
         <div style={{minHeight: 599}}>
             <h1>Blogs:</h1>
+            <Link to={'/blog/new'}>Add new post</Link>
             {
                 postsOnPage.map(post => (
                     <Link
